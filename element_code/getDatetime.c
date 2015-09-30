@@ -1,0 +1,1 @@
+	return DS1307_GetISO8601Time();

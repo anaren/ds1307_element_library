@@ -1,0 +1,97 @@
+{
+	"type": "Embedded Library",
+	"label": "DS1307 Driver",
+	"language": {
+		"en": {
+			"label": "DS1307 Driver"
+		}
+	},
+	"name": "ds1307",
+	"author": "Anaren Inc.",
+	"manufacturer":"Maxim Integrated",
+	"description":"The DS1307 serial real-time clock (RTC) is a low-power, full binary-coded decimal (BCD) clock/calendar plus 56 bytes of NV SRAM. Address and data are transferred serially through an I²C, bidirectional bus. The clock/calendar provides seconds, minutes, hours, day, date, month, and year information. The end of the month date is automatically adjusted for months with fewer than 31 days, including corrections for leap year. The clock operates in either the 24-hour or 12-hour format with AM/PM indicator. The DS1307 has a built-in power-sense circuit that detects power failures and automatically switches to the backup supply. Timekeeping operation continues while the part operates from the backup supply.",
+	"signature": "",
+	"version": "1.0.0",
+	
+	"code": {
+		"global" : "",
+		"setup" : "" 
+	},
+	
+	"elements": {
+	
+		"startClock": {
+			"label": "Start Clock",
+			"language": {
+				"en": {
+					"label": "Start Clock"
+				}
+			},
+			"returnType":"void",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		
+		"stopClock": {
+			"label": "Stop Clock",
+			"language": {
+				"en": {
+					"label": "Stop Clock"
+				}
+			},
+			"returnType":"void",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		
+		"resetClock": {
+			"label": "Reset Clock",
+			"language": {
+				"en": {
+					"label": "Reset Clock"
+				}
+			},
+			"returnType":"void",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		},
+		
+		"getDatetime": {
+			"label": "Get Datetime",
+			"language": {
+				"en": {
+					"label": "Get Datetime"
+				}
+			},
+			"returnType":"string",
+			"inputType":"void",
+			"icon": null,
+			"code": ""
+		}
+	},
+	
+	"config":{
+		"file":"ds1307_config.h",
+		
+		"values":{
+			"acc_gyro_w_odr_xl":{
+				"name":"DS1307_SQW_OUT_PIN_FREQUENCY",
+				"input":"Combo",
+				"prefix":"#define DS1307_SQW_OUT_PIN_FREQUENCY DS1307_SQW_OUT_PIN_FREQUENCY_",
+				"options": ["1Hz", "4_096kHz", "8_192kHz", "32_768kHz", "Low", "High"],
+				"value":"Low",
+				"regex":"^[a-zA-Z0-9_.]*$"
+			}
+		}
+	},
+	
+	"categories":["RTC", "Clock"],
+	"links":{
+		"Product Page":"https://www.maximintegrated.com/en/products/digital/real-time-clocks/DS1307.html",
+		"Datasheet":"https://cdn.sparkfun.com/datasheets/BreakoutBoards/DS1307.pdf",
+		"Wiki Page":"https://atmosphere.anaren.com/wiki/DS1307_Driver"
+	}
+}
