@@ -400,6 +400,33 @@ char *DS1307_GetISO8601Time()
 	return isoRetBuffer;
 }
 
+void DS1307_SetISO8601Time(char *value)
+{
+	unsigned int year = 0;
+	unsigned char month = 0;
+	unsigned char date = 0;
+	unsigned char hours = 0;
+	unsigned char minutes = 0;
+	unsigned char seconds = 0;
+	char *end;
+	
+	year = strtol(value, &end, 10);
+	month = strtol(end + 1, &end, 10);
+	date = strtol(end + 1, &end, 10);
+	hours = strtol(end + 1, &end, 10);
+	minutes = strtol(end + 1, &end, 10);
+	seconds = strtol(end + 1, &end, 10);
+	
+	DS1307_SetYear(year);
+	DS1307_SetMonth(month);
+	DS1307_SetDate(date);
+	DS1307_SetHours(hours);
+	DS1307_SetMinutes(minutes);
+	DS1307_SetSeconds(seconds);
+	
+	return;
+}
+
 void DS1307_SetDateTime(unsigned int year, unsigned char month, unsigned char date, unsigned char hours, unsigned char minutes, unsigned char seconds)
 {
 	DS1307_SetYear(year);

@@ -360,5 +360,12 @@ unsigned char DS1307_GetControl();
 */
 char *DS1307_GetISO8601Time();
 
+/**
+* 
+*
+* @param
+* @return
+*/
+void DS1307_SetISO8601Time(char *value);
 
 #endif  /* DS1307_H */
