@@ -1,5 +1,8 @@
 #include "ds1307.h"
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "spar_utils.h"
 
 char isoRetBuffer[32];
 
@@ -356,7 +359,7 @@ unsigned char DS1307_GetMonth()
 */
 unsigned char DS1307_GetYear()
 {
-	unsigned char value = DS1307_ReadRegister(DS1307_MONTH_ADDR);
+	unsigned char value = DS1307_ReadRegister(DS1307_YEAR_ADDR);
 	
 	unsigned char tens = (value & 0x10) >> 4;
 	unsigned char ones = (value & 0x0F);
@@ -387,7 +390,7 @@ char *DS1307_GetISO8601Time()
 	unsigned int year = DS1307_GetYear();
 	unsigned char month = DS1307_GetMonth();
 	unsigned char date = DS1307_GetDate();
-	unsigned char hours = DS1307_GetHour();
+	unsigned char hours = DS1307_GetHours();
 	unsigned char minutes = DS1307_GetMinutes();
 	unsigned char seconds = DS1307_GetSeconds();
 	
