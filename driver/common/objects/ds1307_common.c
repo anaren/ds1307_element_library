@@ -357,7 +357,7 @@ unsigned char DS1307_GetMonth()
 * @param
 * @return
 */
-unsigned char DS1307_GetYear()
+unsigned int DS1307_GetYear()
 {
 	unsigned char value = DS1307_ReadRegister(DS1307_YEAR_ADDR);
 	

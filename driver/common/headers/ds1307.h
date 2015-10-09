@@ -342,7 +342,7 @@ unsigned char DS1307_GetMonth();
 * @param
 * @return
 */
-unsigned char DS1307_GetYear();
+unsigned int DS1307_GetYear();
 
 /**
 * 
