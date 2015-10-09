@@ -361,7 +361,7 @@ unsigned char DS1307_GetYear()
 {
 	unsigned char value = DS1307_ReadRegister(DS1307_YEAR_ADDR);
 	
-	unsigned char tens = (value & 0x10) >> 4;
+	unsigned char tens = value >> 4;
 	unsigned char ones = (value & 0x0F);
 	
 	return (tens * 10) + ones + DS1307_EPOCH_YEAR;
