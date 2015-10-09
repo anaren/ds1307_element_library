@@ -59,6 +59,19 @@
 			"code": ""
 		},
 		
+		"setDatetime": {
+			"label": "Set Datetime",
+			"language": {
+				"en": {
+					"label": "Set Datetime"
+				}
+			},
+			"returnType":"void",
+			"inputType":"string",
+			"icon": null,
+			"code": ""
+		},
+		
 		"getDatetime": {
 			"label": "Get Datetime",
 			"language": {
