@@ -276,6 +276,11 @@ void DS1307_SetHours(unsigned char value)
 	unsigned char tens = (value % 12) / 10;
 	unsigned char ones = (value % 12) - (tens * 10);
 	
+	if(tens + ones > 24) {
+		tens = 0;
+		ones = 0;
+	}
+	
 	value = 0x40 | (ampm << 5) | (tens << 4) | (ones);
 	
 	DS1307_WriteRegister(DS1307_HOURS_ADDR, value);
