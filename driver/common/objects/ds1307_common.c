@@ -421,7 +421,7 @@ unsigned char DS1307_GetHours()
 	unsigned char tens = (value & 0x10) >> 4;
 	unsigned char ones = (value & 0x0F);
 	
-	return (ampm * 12) + (tens * 10) + ones;
+	return ((ampm * 12) + (tens * 10) + ones) % 24;
 }
 
 /**
