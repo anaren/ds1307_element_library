@@ -268,18 +268,16 @@ void DS1307_SetHours(unsigned char value)
 {
 	bool ampm = false;
 	
-	if(value > 12)
+	if(value >= 12)
 	{
 		ampm = true;
 	}
 	
+	value = value % 24;
+	
 	unsigned char tens = (value % 12) / 10;
 	unsigned char ones = (value % 12) - (tens * 10);
 	
-	if(tens + ones > 24) {
-		tens = 0;
-		ones = 0;
-	}
 	
 	value = 0x40 | (ampm << 5) | (tens << 4) | (ones);
 	
