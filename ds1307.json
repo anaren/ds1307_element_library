@@ -101,7 +101,7 @@
 		}
 	},
 	
-	"categories":["RTC", "Clock"],
+	"categories":["RTC", "Clock", "New"],
 	"links":{
 		"Product Page":"https://www.maximintegrated.com/en/products/digital/real-time-clocks/DS1307.html",
 		"Datasheet":"https://cdn.sparkfun.com/datasheets/BreakoutBoards/DS1307.pdf",
