@@ -2,7 +2,8 @@
     "author": "Anaren Inc.",
     "categories": [
         "RTC",
-        "Clock"
+        "Clock",
+        "New"
     ],
     "code": {
         "connected": " \r\n",
