@@ -214,71 +214,7 @@ void DS1307_SetControl(unsigned char value);
 * @param
 * @return
 */
-void DS1307_SetSQWOutput(DS1307_SQW_Setting value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
-void DS1307_SetSeconds(unsigned char value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
-void DS1307_SetMinutes(unsigned char value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
 void DS1307_SetHours(unsigned char value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
-void DS1307_SetDay(unsigned char value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
-void DS1307_SetDate(unsigned char value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
-void DS1307_SetMonth(unsigned char value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
-void DS1307_SetYear(unsigned int value);
-
-/**
-* 
-*
-* @param
-* @return
-*/
-void DS1307_SetControl(unsigned char value);
 
 /**
 * 
