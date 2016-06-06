@@ -255,6 +255,11 @@ void DS1307_SetMinutes(unsigned char value)
 	DS1307_WriteRegister(DS1307_MINUTES_ADDR, value);
 }
 
+void DS1307_SetHour(unsigned char value)
+{
+	DS1307_SetHours(value);
+}
+
 /**
 * 
 *
@@ -407,6 +412,7 @@ unsigned char DS1307_GetMinutes()
 	return (((value & 0x70) >> 4) * 10) + (value & 0x0F);
 }
 
+
 /**
 * 
 *
@@ -422,6 +428,11 @@ unsigned char DS1307_GetHours()
 	unsigned char ones = (value & 0x0F);
 	
 	return ((ampm * 12) + (tens * 10) + ones) % 24;
+}
+
+unsigned char DS1307_GetHour()
+{
+	return DS1307_GetHours();
 }
 
 /**
