@@ -48,6 +48,8 @@
 #define false 0
 #endif
 
+ #define NULL 0
+
 //------------------------------------------------------------------------------
 /**
  *  Defines, enumerations, and structure definitions

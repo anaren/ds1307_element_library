@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "spar_utils.h"
 
 char isoRetBuffer[32];
 
@@ -164,7 +163,7 @@ unsigned char DS1307_ReadRegister(unsigned char addr)
 {
 	if(addr >= DS1307_HIGH_RAM_ADDR)
 	{
-		return;
+		return 0;
 	}
 	
 	unsigned char writeBytes[1];
@@ -185,6 +184,7 @@ unsigned char DS1307_ReadRegister(unsigned char addr)
 */
 unsigned char DS1307_ReadRegisters(unsigned char addr, unsigned char *buffer, unsigned char length)
 {
+	return 0;
 }
 
 /**
