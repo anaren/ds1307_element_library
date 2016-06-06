@@ -32,10 +32,7 @@ static inline int isdigit(char c)
  * Ignores `locale' stuff.  Assumes that the upper and lower case
  * alphabets and digits are each contiguous.
  */
-long strtol(nptr, endptr, base)
-	const char *nptr;
-	char **endptr;
-	register int base;
+long ds_1307_strtol( const char *nptr, char **endptr, register int base)
 {
 	register const char *s = nptr;
 	register unsigned long acc;
@@ -525,12 +522,12 @@ void DS1307_SetISO8601Time(char *value)
 	unsigned char seconds = 0;
 	char *end;
 	
-	year = strtol(value, &end, 10);
-	month = strtol(end + 1, &end, 10);
-	date = strtol(end + 1, &end, 10);
-	hours = strtol(end + 1, &end, 10);
-	minutes = strtol(end + 1, &end, 10);
-	seconds = strtol(end + 1, &end, 10);
+	year = ds_1307_strtol(value, &end, 10);
+	month = ds_1307_strtol(end + 1, &end, 10);
+	date = ds_1307_strtol(end + 1, &end, 10);
+	hours = ds_1307_strtol(end + 1, &end, 10);
+	minutes = ds_1307_strtol(end + 1, &end, 10);
+	seconds = ds_1307_strtol(end + 1, &end, 10);
 	
 	DS1307_SetYear(year);
 	DS1307_SetMonth(month);
