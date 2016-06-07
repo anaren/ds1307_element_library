@@ -6,9 +6,9 @@
         "New"
     ],
     "code": {
-        "connected": " \n",
+        "connected": " \r\n",
         "global": "",
-        "interval": " \n",
+        "interval": " \r\n",
         "setup": "\tDS1307_Init();"
     },
     "config": {
