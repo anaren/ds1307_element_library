@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "spar_utils.h"
 
 char isoRetBuffer[32];
 
@@ -33,10 +32,7 @@ static inline int isdigit(char c)
  * Ignores `locale' stuff.  Assumes that the upper and lower case
  * alphabets and digits are each contiguous.
  */
-long strtol(nptr, endptr, base)
-	const char *nptr;
-	char **endptr;
-	register int base;
+long ds_1307_strtol( const char *nptr, char **endptr, register int base)
 {
 	register const char *s = nptr;
 	register unsigned long acc;
@@ -164,7 +160,7 @@ unsigned char DS1307_ReadRegister(unsigned char addr)
 {
 	if(addr >= DS1307_HIGH_RAM_ADDR)
 	{
-		return;
+		return 0;
 	}
 	
 	unsigned char writeBytes[1];
@@ -185,6 +181,7 @@ unsigned char DS1307_ReadRegister(unsigned char addr)
 */
 unsigned char DS1307_ReadRegisters(unsigned char addr, unsigned char *buffer, unsigned char length)
 {
+	return 0;
 }
 
 /**
@@ -256,6 +253,11 @@ void DS1307_SetMinutes(unsigned char value)
 	value = (tens << 4) | ones;
 	
 	DS1307_WriteRegister(DS1307_MINUTES_ADDR, value);
+}
+
+void DS1307_SetHour(unsigned char value)
+{
+	DS1307_SetHours(value);
 }
 
 /**
@@ -410,6 +412,7 @@ unsigned char DS1307_GetMinutes()
 	return (((value & 0x70) >> 4) * 10) + (value & 0x0F);
 }
 
+
 /**
 * 
 *
@@ -425,6 +428,11 @@ unsigned char DS1307_GetHours()
 	unsigned char ones = (value & 0x0F);
 	
 	return ((ampm * 12) + (tens * 10) + ones) % 24;
+}
+
+unsigned char DS1307_GetHour()
+{
+	return DS1307_GetHours();
 }
 
 /**
@@ -525,12 +533,12 @@ void DS1307_SetISO8601Time(char *value)
 	unsigned char seconds = 0;
 	char *end;
 	
-	year = strtol(value, &end, 10);
-	month = strtol(end + 1, &end, 10);
-	date = strtol(end + 1, &end, 10);
-	hours = strtol(end + 1, &end, 10);
-	minutes = strtol(end + 1, &end, 10);
-	seconds = strtol(end + 1, &end, 10);
+	year = ds_1307_strtol(value, &end, 10);
+	month = ds_1307_strtol(end + 1, &end, 10);
+	date = ds_1307_strtol(end + 1, &end, 10);
+	hours = ds_1307_strtol(end + 1, &end, 10);
+	minutes = ds_1307_strtol(end + 1, &end, 10);
+	seconds = ds_1307_strtol(end + 1, &end, 10);
 	
 	DS1307_SetYear(year);
 	DS1307_SetMonth(month);
