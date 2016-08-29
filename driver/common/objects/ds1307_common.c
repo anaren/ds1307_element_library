@@ -3,6 +3,10 @@
 #include <string.h>
 #include <stdlib.h>
 
+#ifdef BCM20737
+#include "spar_utils.h"
+#endif
+
 char isoRetBuffer[32];
 
 static inline int isupper(char c)
